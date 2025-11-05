@@ -1,3 +1,7 @@
+# Ignorar o antigo arquivo de dados
+src/data/artworks.js
+
+
 # Dependências e build
 node_modules
 dist
