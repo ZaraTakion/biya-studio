@@ -1,44 +1,54 @@
-:root {
-  --bg: #0c0c0d;
-  --bg-alt: #141414;
-  --text: #f5f5f5;
-  --muted: #8a8a8a;
-  --border: rgba(255, 255, 255, 0.08);
-  --card: rgba(255, 255, 255, 0.03);
-  --radius: 1rem;
-  --shadow: 0 0 40px rgba(255, 255, 255, 0.04);
-  --ease: cubic-bezier(.4, 0, .2, 1);
+.App {
+  position: relative;
+  overflow-x: hidden;
+  color: var(--text);
+  background-color: var(--bg);
 }
 
-/* Fundo animado */
+/* Fundo animado sutil com gradiente dinâmico */
 .animated-bg {
   position: fixed;
   inset: 0;
-  background: linear-gradient(120deg, #0c0c0d, #141414, #1a1625, #0c0c0d);
-  background-size: 300% 300%;
-  animation: gradientMove 14s ease infinite;
+  background: linear-gradient(-45deg, #1b1b1e, #0f0f12, #1c1424, #0d0b15);
+  background-size: 400% 400%;
   z-index: -1;
+  animation: gradientShift 16s ease infinite;
 }
 
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-body, html, .App {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  color: var(--text);
-  background: var(--bg);
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+/* Transições entre seções */
+section {
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-main {
-  position: relative;
-  z-index: 1;
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade global */
+@media (max-width: 768px) {
+  .App {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 64px 5%;
+  }
 }

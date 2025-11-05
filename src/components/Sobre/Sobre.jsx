@@ -5,19 +5,21 @@ export default function Sobre() {
   useRevealOnScroll()
 
   return (
-    <section id="sobre" className={`${styles.sobre} reveal`} aria-label="Sobre Biya">
+    <section id="sobre" className={`${styles.sobre} reveal`} aria-label="Sobre a Biya">
       <div className={styles.inner}>
         <h2 className={styles.title}>SOBRE</h2>
 
         <div className={styles.card}>
           <p>
-            Este espaço é dedicado à arte e ao processo. As transmissões mostram o que acontece entre um traço e outro as pausas, as tentativas, os acertos.
+            Biya é uma artista digital e criadora de conteúdo que combina ilustração, narrativa e presença ao vivo para criar uma experiência acolhedora e inspiradora.
+            Sua arte mistura leveza estética e temas introspectivos, resultando em um estilo que se destaca pela autenticidade e sensibilidade visual.
           </p>
           <p>
-            As criações seguem um ritmo calmo, guiado pela luz, pela cor e pela presença do momento. Cada trabalho é um registro do instante em que algo simples ganha forma.
+            No estúdio Biya, cada obra é uma extensão do processo criativo – explorando cor, forma e emoção.
+            Além das ilustrações, Biya também compartilha momentos de criação em suas transmissões ao vivo, aproximando o público da jornada artística.
           </p>
           <p>
-            Biya atua entre o digital e o cotidiano, buscando traduzir atmosfera em composição. É menos sobre a artista e mais sobre o que emerge do silêncio quando alguém se permite observar.
+            O projeto Biya Studio é um espaço de expressão, aprendizado e comunidade. Criado com carinho, pensado para inspirar e conectar pessoas que vivem a arte como linguagem.
           </p>
         </div>
       </div>

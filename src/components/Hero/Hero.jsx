@@ -1,25 +1,23 @@
 import styles from './Hero.module.css'
-import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 
 export default function Hero() {
-  useRevealOnScroll()
-  const BASE = import.meta.env.BASE_URL
-
   return (
-    <section id="hero" className={`${styles.hero} reveal`} aria-label="Apresentação de Biya">
+    <section id="hero" className={styles.hero} aria-label="Apresentação de Biya">
+      {/* Texto de fundo decorativo */}
       <div className={styles.bgLeft} aria-hidden="true">BI</div>
       <div className={styles.bgRight} aria-hidden="true">YA</div>
 
+      {/* Conteúdo principal */}
       <div className={styles.content}>
         <p className={styles.handle}>@BiyA_YU</p>
-        <h1 className={styles.title}>Artista e Streamer</h1>
-        <h2 className={styles.subtitle}>\\ O //</h2>
+        <h1 className={styles.title}>Artista & Streamer</h1>
+        <h2 className={styles.subtitle}>Atmosfera e presença.</h2>
 
         <figure className={styles.figure}>
           <img
-            src={`${BASE}assets/biya.png`}
-            alt="Retrato artístico de Biya"
-            loading="eager"
+            src="/assets/biya.png"
+            alt="Retrato artístico da Biya em preto e branco"
+            loading="lazy"
           />
         </figure>
 
@@ -38,7 +36,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="btn-outline"
           >
-            X
+            X (Twitter)
           </a>
         </div>
       </div>

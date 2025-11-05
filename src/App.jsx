@@ -5,8 +5,8 @@ import Sobre from './components/Sobre/Sobre'
 import ArtGrid from './components/ArtGrid/ArtGrid'
 import Lives from './components/Lives/Lives'
 import Community from './components/Community/Community'
-import Footer from './components/Footer/Footer'
 import FloatingButtons from './components/FloatingButtons/FloatingButtons'
+import Footer from './components/Footer/Footer'
 
 export default function App() {
   return (

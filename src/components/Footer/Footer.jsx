@@ -4,46 +4,16 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
-        <p className={styles.copyright}>
-          © 2025 Biya — artista digital e streamer.
-        </p>
-
         <p className={styles.signature}>
-          Design e desenvolvimento por{' '}
-          <a
-            href="https://zaratakion.github.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Zara Takion
-          </a>
+          © {new Date().getFullYear()} <a href="https://zaratakion.github.io/">Biya Studio</a>.  
+          Desenvolvido por <a href="https://github.com/ZaraTakion" target="_blank" rel="noopener noreferrer">Zara Takion</a>.
         </p>
 
-        <p className={styles.social}>
-          <a
-            href="https://www.youtube.com/@biyaYU"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            YouTube
-          </a>
-          {' • '}
-          <a
-            href="https://x.com/BiyA_YU"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            X
-          </a>
-          {' • '}
-          <a
-            href="https://discord.gg/Bk6JXfdq58"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Discord
-          </a>
-        </p>
+        <div className={styles.social}>
+          <a href="https://www.twitch.tv/biya" target="_blank" rel="noopener noreferrer">Twitch</a>
+          <a href="https://twitter.com/biya" target="_blank" rel="noopener noreferrer">Twitter</a>
+          <a href="https://instagram.com/biya" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
       </div>
     </footer>
   )

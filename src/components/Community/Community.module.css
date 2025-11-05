@@ -59,9 +59,11 @@
 
 .invite:hover {
   transform: translateY(-4px);
-  box-shadow: 0 0 40px rgba(160,115,255,0.4);
+  animation: pulseGlow 2s ease infinite;
 }
 
-@media (max-width: 768px) {
-  .rules { padding: 1.2rem; }
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 30px rgba(160,115,255,0.25); }
+  50% { box-shadow: 0 0 50px rgba(160,115,255,0.45); }
 }
+

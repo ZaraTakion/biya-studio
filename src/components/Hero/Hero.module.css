@@ -6,8 +6,10 @@
   justify-content: center;
   text-align: center;
   overflow: hidden;
+  background: var(--bg);
 }
 
+/* ===== Texto decorativo de fundo ===== */
 .bgLeft,
 .bgRight {
   position: absolute;
@@ -24,6 +26,7 @@
 .bgLeft { left: 5%; }
 .bgRight { right: 5%; }
 
+/* ===== Conteúdo ===== */
 .content {
   z-index: 1;
   display: flex;
@@ -42,7 +45,7 @@
 .title {
   font-family: Poppins, sans-serif;
   font-weight: 800;
-  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-size: clamp(1.4rem, 3vw, 2rem);
   letter-spacing: 0.08em;
 }
 
@@ -50,8 +53,10 @@
   color: var(--muted);
   font-weight: 400;
   font-size: clamp(0.9rem, 2vw, 1.2rem);
+  margin-bottom: 1rem;
 }
 
+/* ===== Imagem ===== */
 .figure img {
   width: 360px;
   max-width: 80vw;
@@ -66,13 +71,16 @@
   transform: translateY(-2px);
 }
 
+/* ===== Botões ===== */
 .cta {
   display: flex;
   gap: 1rem;
   margin-top: 1.2rem;
 }
 
+/* ===== Mobile ===== */
 @media (max-width: 768px) {
   .bgLeft, .bgRight { display: none; }
   .figure img { width: 280px; }
+  .title { font-size: 1.3rem; }
 }

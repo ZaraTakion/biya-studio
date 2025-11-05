@@ -3,11 +3,10 @@ import styles from './Header.module.css'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
-  const BASE = import.meta.env.BASE_URL
 
   useEffect(() => {
     const anchors = document.querySelectorAll('a[href^="#"]')
-    const smoothScroll = e => {
+    const smooth = e => {
       const href = e.currentTarget.getAttribute('href')
       if (!href || href === '#') return
       const target = document.querySelector(href)
@@ -17,8 +16,8 @@ export default function Header() {
         setOpen(false)
       }
     }
-    anchors.forEach(a => a.addEventListener('click', smoothScroll))
-    return () => anchors.forEach(a => a.removeEventListener('click', smoothScroll))
+    anchors.forEach(a => a.addEventListener('click', smooth))
+    return () => anchors.forEach(a => a.removeEventListener('click', smooth))
   }, [])
 
   useEffect(() => {
@@ -40,7 +39,8 @@ export default function Header() {
     <header className={`site-header ${styles.header}`}>
       <div className={styles.wrap}>
         <a href="#hero" className={styles.brand} aria-label="Voltar ao topo">
-          <img src={`${BASE}assets/favicon.png`} alt="Logo Biya" className={styles.logoIcon} />
+          <img src="/assets/favicon.png" alt="Logo Biya" className={styles.logoIcon} />
+          <span>Biya Studio</span>
         </a>
 
         <nav className={styles.nav} aria-label="Navegação principal">
@@ -56,19 +56,10 @@ export default function Header() {
           </button>
 
           <ul className={`${styles.menu} ${open ? styles.open : ''}`}>
-            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#hero">Início</a></li>
             <li><a href="#trabalhos">Arte</a></li>
-            <li><a href="#lives">Lives</a></li>
+            <li><a href="#sobre">Sobre</a></li>
             <li><a href="#community">Comunidade</a></li>
-            <li>
-              <a
-                href="https://discord.gg/Bk6JXfdq58"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Discord
-              </a>
-            </li>
           </ul>
         </nav>
       </div>
