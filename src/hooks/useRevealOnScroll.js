@@ -1,21 +1,20 @@
+import { useEffect } from 'react'
+
 export default function useRevealOnScroll() {
-  const revealElements = () => {
-    const reveals = document.querySelectorAll('.reveal')
-    for (let i = 0; i < reveals.length; i++) {
-      const windowHeight = window.innerHeight
-      const elementTop = reveals[i].getBoundingClientRect().top
-      const elementVisible = 100
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal')
 
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add('show')
-      } else {
-        reveals[i].classList.remove('show')
-      }
+    const handleScroll = () => {
+      const trigger = window.innerHeight * 0.85
+      elements.forEach(el => {
+        const top = el.getBoundingClientRect().top
+        if (top < trigger) el.classList.add('show')
+      })
     }
-  }
 
-  window.addEventListener('scroll', revealElements)
-  revealElements()
+    window.addEventListener('scroll', handleScroll)
+    handleScroll()
 
-  return () => window.removeEventListener('scroll', revealElements)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 }
