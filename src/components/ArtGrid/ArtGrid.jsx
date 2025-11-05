@@ -1,20 +1,29 @@
 import styles from './ArtGrid.module.css'
 import useRevealOnScroll from '../../hooks/useRevealOnScroll'
-import artworks from '../../data/artworks'
 
 export default function ArtGrid() {
   useRevealOnScroll()
 
+  const BASE = import.meta.env.BASE_URL
+  const files = [
+    'shot1.webp', 'shot2.webp', 'shot3.webp',
+    'shot4.webp', 'shot5.webp', 'shot6.webp',
+    'shot7.webp', 'shot8.webp', 'shot9.webp',
+    'shot10.webp'
+  ]
+
   return (
-    <section id="trabalhos" className={`${styles.section} reveal`} aria-label="Galeria de arte da Biya">
+    <section id="trabalhos" className={`${styles.section} reveal`} aria-label="Galeria de arte">
       <h2 className={styles.title}>ARTE</h2>
       <div className={styles.grid}>
-        {artworks.map((art, i) => (
-          <div key={i} className={styles.item}>
-            <img src={art.img} alt={art.title} loading="lazy" />
-            <div className={styles.caption}>{art.title}</div>
-          </div>
-        ))}
+        {files.map((name, i) => {
+          const src = `${BASE}assets/shots/${name}`
+          return (
+            <div key={i} className={styles.item}>
+              <img src={src} alt={`Obra ${i + 1}`} loading="lazy" />
+            </div>
+          )
+        })}
       </div>
     </section>
   )
