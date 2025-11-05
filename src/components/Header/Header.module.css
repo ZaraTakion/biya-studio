@@ -1,0 +1,110 @@
+.header {}
+
+.wrap {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 900;
+  letter-spacing: .05em;
+}
+
+.logoIcon {
+  width: 26px;
+  height: 26px;
+}
+
+.nav {
+  position: relative;
+}
+
+.burger {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 10px;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s var(--ease), transform .1s var(--ease);
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text);
+}
+
+.burger:hover {
+  background: rgba(255,255,255,.06);
+  transform: translateY(-1px);
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  font-weight: 600;
+  position: relative;
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--violet);
+  transition: width .25s var(--ease);
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .burger {
+    display: inline-flex;
+  }
+
+  .menu {
+    position: absolute;
+    right: 0;
+    top: 56px;
+    background: rgba(20,20,22,.9);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px;
+    display: none;
+    flex-direction: column;
+    min-width: 220px;
+    transform: translateY(-6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s var(--ease), transform .2s var(--ease);
+  }
+
+  .open {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}

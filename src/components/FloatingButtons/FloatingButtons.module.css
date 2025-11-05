@@ -1,0 +1,35 @@
+.wrap {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 200;
+}
+
+.btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-weight: 800;
+  box-shadow: var(--shadow);
+  transition: transform .2s var(--ease), background .2s var(--ease), box-shadow .2s var(--ease);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 0 20px rgba(160,120,255,.25);
+}
+
+@media (max-width: 768px) {
+  .wrap { right: 14px; bottom: 14px; gap: 8px; }
+  .btn { width: 40px; height: 40px; }
+}

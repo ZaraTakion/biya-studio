@@ -1,0 +1,67 @@
+.community {
+  background: var(--bg);
+  padding: 100px 8%;
+  text-align: center;
+}
+
+.inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.title {
+  font-family: Poppins, sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: 0.15em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.desc {
+  color: var(--muted);
+  font-weight: 500;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.rules {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+.rules li {
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.invite {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #a073ff, #d39eff);
+  color: var(--bg);
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  box-shadow: 0 0 30px rgba(160,115,255,0.25);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+
+.invite:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(160,115,255,0.4);
+}
+
+@media (max-width: 768px) {
+  .rules { padding: 1.2rem; }
+}

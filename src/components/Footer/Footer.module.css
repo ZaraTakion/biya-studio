@@ -1,0 +1,58 @@
+.footer {
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: var(--bg-alt);
+  padding: 2.5rem 10%;
+  color: var(--muted);
+  margin-top: 6rem;
+  animation: fadeIn 1s ease both;
+}
+
+.inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.signature {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.signature a {
+  color: #b699ff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .3s var(--ease);
+}
+
+.signature a:hover {
+  color: #d7c4ff;
+}
+
+.social {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.social a {
+  color: var(--muted);
+  font-weight: 600;
+  margin: 0 0.5rem;
+  transition: color .3s var(--ease);
+}
+
+.social a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 0.85rem;
+    padding: 2rem 6%;
+  }
+}
