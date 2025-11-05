@@ -3,8 +3,8 @@ import styles from './Header.module.css'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
+  const BASE = import.meta.env.BASE_URL
 
-  // Scroll suave entre seções
   useEffect(() => {
     const anchors = document.querySelectorAll('a[href^="#"]')
     const smoothScroll = e => {
@@ -21,7 +21,6 @@ export default function Header() {
     return () => anchors.forEach(a => a.removeEventListener('click', smoothScroll))
   }, [])
 
-  // Transparência dinâmica do header
   useEffect(() => {
     const el = document.querySelector('.site-header')
     const onScroll = () => {
@@ -41,7 +40,7 @@ export default function Header() {
     <header className={`site-header ${styles.header}`}>
       <div className={styles.wrap}>
         <a href="#hero" className={styles.brand} aria-label="Voltar ao topo">
-          <img src="/assets/favicon.png" alt="Logo Biya" className={styles.logoIcon} />
+          <img src={`${BASE}assets/favicon.png`} alt="Logo Biya" className={styles.logoIcon} />
         </a>
 
         <nav className={styles.nav} aria-label="Navegação principal">

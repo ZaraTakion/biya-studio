@@ -3,6 +3,7 @@ import useRevealOnScroll from '../../hooks/useRevealOnScroll'
 
 export default function Hero() {
   useRevealOnScroll()
+  const BASE = import.meta.env.BASE_URL
 
   return (
     <section id="hero" className={`${styles.hero} reveal`} aria-label="Apresentação de Biya">
@@ -16,7 +17,7 @@ export default function Hero() {
 
         <figure className={styles.figure}>
           <img
-            src="/assets/biya.png"
+            src={`${BASE}assets/biya.png`}
             alt="Retrato artístico de Biya"
             loading="eager"
           />
